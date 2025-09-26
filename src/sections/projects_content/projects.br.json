@@ -18,6 +18,15 @@
     }
   },
   {
+    "title": "Jogo da Cobrinha 3D",
+    "description": "Realmente em 3D, é um minigame retrô onde você pode mover a cobrinha nos três eixos do espaço. É mais difícil do que você imagina. E bastante customizável.",
+    "techs": ["Three", "React", "Vite", "Zustand", "Typescript"],
+    "links": {
+      "page": "https://danielx-art.github.io/snakegame3d/",
+      "github": "https://github.com/danielx-art/snakegame3d"
+    }
+  },
+  {
     "title": "Busca Personagens Rick e Morty",
     "description": "Um mural com filtros personalizados de pesquisa de personagens da série Rick e Morty.",
     "techs": ["React", "Next", "Typescript", "Tanstack Query"],

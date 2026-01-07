@@ -3,7 +3,7 @@
 Olá, Seja bem‑vindo(a/e)! Esse é o meu portfólio pessoal, desenvolvido com Vite + React + TypeScript + TailwindCSS. Aqui estão à mostra alguns dos meus principais trabalhos, habilidades e meu *mindset*.
 Também tem um fundo interativo com *boids*, escolha de tema (claro/escuro), alternância de idioma e animações suaves.
 
-🔗 No ar: https://danielx-art.github.io/portfolio/
+🔗 No ar: https://dandesdev.github.io/portfolio/
 
 
 ---
@@ -26,7 +26,7 @@ Também tem um fundo interativo com *boids*, escolha de tema (claro/escuro), alt
 # 📬 Contato
 
 - Email: [daniel.rangel.guedes@gmail.com](mailto://daniel.rangel.guedes)
-- GitHub: @danielx-art
+- GitHub: @dandesdev
 - LinkedIn: [daniel-rangel-guedes](https://www.linkedin.com/in/daniel-rangel-guedes/)
 
 
@@ -34,7 +34,7 @@ Também tem um fundo interativo com *boids*, escolha de tema (claro/escuro), alt
 
 Hi! Be welcome! This is my personal portfolio website, built with Vite + React + TypeScript + TailwindCSS. It presents some of my core work, skills, and mindset. It has a very fun interactive boids background, theme toggling, language toggling, and very beautiful smooth animations.
 
-🔗 Live At: https://danielx-art.github.io/portfolio/
+🔗 Live At: https://dandesdev.github.io/portfolio/
 
 ---
 
@@ -56,5 +56,5 @@ Hi! Be welcome! This is my personal portfolio website, built with Vite + React +
 # 📬 Contact
 
 - Email: [daniel.rangel.guedes@gmail.com](mailto://daniel.rangel.guedes)
-- GitHub: @danielx-art
+- GitHub: @dandesdev
 - LinkedIn: [daniel-rangel-guedes](https://www.linkedin.com/in/daniel-rangel-guedes/)

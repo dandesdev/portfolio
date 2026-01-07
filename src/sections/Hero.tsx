@@ -27,7 +27,7 @@ const content: Record<string, HeroContent> = {
   en: {
     title: "Daniel",
     subtitle: "Fullstack developer",
-    text: "Hi! I like to create cool, interesting, challenging and beautifull stuff, be welcome. Here you'll find projects that blend tech, education and some art — and a little about me.",
+    text: "Hi! I like to create cool, interesting, challenging and beautiful stuff, welcome. Here you'll find projects that blend tech, education and some art — and a little about me.",
     btnProjects: "Take a look!",
     btnBlog: "Blog" 
   },
@@ -100,7 +100,7 @@ export const Hero: React.FC<HeroProps> = ({ className }) => {
              transition-all duration-300 ease-in-out"
               aria-label={currentContent.btnBlog}
             >
-              <a href={`https://danielx-art.github.io/journal/${lang}`} target="blank">
+              <a href={`https://dandesdev.github.io/journal/${lang}`} target="blank">
                 {currentContent.btnBlog}
               </a>
             </button>

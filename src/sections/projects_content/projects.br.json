@@ -5,7 +5,7 @@
     "techs": ["React", "Next", "Typescript", "Three"],
     "links": {
       "page": "https://particlesrandomphysics.vercel.app/",
-      "github": "https://github.com/danielx-art/particlesrandomphysics"
+      "github": "https://github.com/dandesdev/particlesrandomphysics"
     }
   },
   {
@@ -14,7 +14,7 @@
     "techs": ["React", "Next", "Typescript", "Tailwind", "Zustand"],
     "links": {
       "page": "https://geosimples.vercel.app/",
-      "github": "https://github.com/danielx-art/tikzgenerator"
+      "github": "https://github.com/dandesdev/tikzgenerator"
     }
   },
   {
@@ -22,8 +22,8 @@
     "description": "Realmente em 3D, é um minigame retrô onde você pode mover a cobrinha nos três eixos do espaço. É mais difícil do que você imagina. E bastante customizável.",
     "techs": ["Three", "React", "Vite", "Zustand", "Typescript"],
     "links": {
-      "page": "https://danielx-art.github.io/snakegame3d/",
-      "github": "https://github.com/danielx-art/snakegame3d"
+      "page": "https://dandesdev.github.io/snakegame3d/",
+      "github": "https://github.com/dandesdev/snakegame3d"
     }
   },
   {
@@ -32,7 +32,7 @@
     "techs": ["React", "Next", "Typescript", "Tanstack Query"],
     "links": {
       "page": "https://ricknmortychallenge.vercel.app/",
-      "github": "https://github.com/danielx-art/ricknmortychallenge"
+      "github": "https://github.com/dandesdev/ricknmortychallenge"
     }
   }
 ]

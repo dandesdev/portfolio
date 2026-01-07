@@ -1,11 +1,11 @@
 [
   {
     "title": "Particles And Random Physics",
-    "description": "Made as an education tool, this is a 3D environment, where you can interact with a particle system behaving in accord to some random physics that comes with a short description.",
+    "description": "Made as an education tool, this is a 3D environment, where you can interact with a particle system behaving in accordance with some random physics that comes with a short description.",
     "techs": ["React", "Next", "Typescript", "Three"],
     "links": {
       "page": "https://particlesrandomphysics.vercel.app/",
-      "github": "https://github.com/danielx-art/particlesrandomphysics"
+      "github": "https://github.com/dandesdev/particlesrandomphysics"
     }
   },
   {
@@ -14,16 +14,16 @@
     "techs": ["React", "Next", "Typescript", "Tailwind", "Zustand"],
     "links": {
       "page": "https://geosimples.vercel.app/",
-      "github": "https://github.com/danielx-art/tikzgenerator"
+      "github": "https://github.com/dandesdev/tikzgenerator"
     }
   },
   {
     "title": "Snake Game 3D",
-    "description": "This is a retro Snake Game actually in 3D, meaning you can move in the three directions of space. Is harder than you think. And there's a lot of customizations.",
+    "description": "This is a retro Snake Game actually in 3D, meaning you can move in the three directions of space. It's harder than you think. And there are a lot of customizations.",
     "techs": ["Three", "React", "Vite", "Zustand", "Typescript"],
     "links": {
-      "page": "https://danielx-art.github.io/snakegame3d/",
-      "github": "https://github.com/danielx-art/snakegame3d"
+      "page": "https://dandesdev.github.io/snakegame3d/",
+      "github": "https://github.com/dandesdev/snakegame3d"
     }
   },
   {
@@ -32,7 +32,7 @@
     "techs": ["React", "Next", "Typescript", "Tanstack Query"],
     "links": {
       "page": "https://ricknmortychallenge.vercel.app/",
-      "github": "https://github.com/danielx-art/ricknmortychallenge"
+      "github": "https://github.com/dandesdev/ricknmortychallenge"
     }
   }
 ]

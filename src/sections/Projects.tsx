@@ -1,8 +1,10 @@
+import { useRef } from "react";
 import { useUserPreferences } from "../context/useUserPreferences";
 import cn from "../utils/cn";
 import projectsEn from "./projects_content/projects.en.json";
 import projectsBr from "./projects_content/projects.br.json";
 import { ProjectCard } from "../components/ProjectCard";
+import { useScrollBlur } from "../hooks/useScrollBlur";
 
 type ProjectProps = {
   className?: string;
@@ -18,6 +20,9 @@ type Project = {
 export const Projects: React.FC<ProjectProps> = ({ className }) => {
   const { lang } = useUserPreferences();
   const projects: Project[] = lang === "en" ? projectsEn : projectsBr;
+  const titleRef = useRef<HTMLHeadingElement>(null);
+
+  useScrollBlur(titleRef);
 
   return (
     <section
@@ -28,7 +33,10 @@ export const Projects: React.FC<ProjectProps> = ({ className }) => {
       )}
     >
       <div className="md:max-w-[800px]">
-        <h2 className="text-4xl text-primary font-bold text-center pb-10">
+        <h2 
+          ref={titleRef}
+          className="text-4xl text-primary font-bold text-center pb-10 origin-center will-change-[filter,text-shadow]"
+        >
           {lang === "en" ? "Projects" : "Projetos"}
         </h2>
 

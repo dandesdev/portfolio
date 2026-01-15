@@ -14,6 +14,14 @@ type WaveBackgroundProps = {
   mouseInfluenceRadius?: number;
   /** Offset to move wave up from bottom edge (default: 50) */
   waveOffset?: number;
+  /** Speed of mouse interpolation (default: 0.02) - lower means more drag/delay */
+  mouseLerpSpeed?: number;
+  /** Speed of gradient interpolation (default: 0.002) - very low for subtle following */
+  gradientLerpSpeed?: number;
+  /** Start of the gradient movement range (0-1) (default: 0.5 = middle of screen) */
+  gradientRangeStart?: number;
+  /** End of the gradient movement range (0-1) (default: 5/6 = ~0.83) */
+  gradientRangeEnd?: number;
 };
 
 export const WaveBackground: React.FC<WaveBackgroundProps> = ({
@@ -24,16 +32,22 @@ export const WaveBackground: React.FC<WaveBackgroundProps> = ({
   waveFrequency = 2,
   mouseInfluenceRadius = 300,
   waveOffset = 50,
+  mouseLerpSpeed = 0.02,
+  gradientLerpSpeed = 0.002,
+  gradientRangeStart = 1/3,
+  gradientRangeEnd = 5/6,
 }) => {
   const svgRef = useRef<SVGSVGElement>(null);
   const pathRef = useRef<SVGPathElement>(null);
+  const gradientRef = useRef<HTMLDivElement>(null);
   const animationRef = useRef<number>(0);
   const containerRef = useRef<HTMLDivElement>(null);
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
 
   // Mouse tracking with smooth interpolation
   const targetMouseXRef = useRef<number | null>(null); // Raw mouse position
-  const smoothMouseXRef = useRef<number>(0); // Interpolated position
+  const smoothMouseXRef = useRef<number>(0); // Interpolated position for wave
+  const smoothGradientXRef = useRef<number>(0); // Interpolated position for gradient (slower)
   const mouseInfluenceRef = useRef<number>(0); // 0 = no influence, 1 = full influence
 
   // Track mouse position globally (window level for reliable capture)
@@ -113,23 +127,41 @@ export const WaveBackground: React.FC<WaveBackgroundProps> = ({
 
   // Animation loop with smooth interpolation
   useEffect(() => {
-    const lerpSpeed = 0.08; // How fast to interpolate (0-1, lower = smoother)
+    const lerpSpeed = mouseLerpSpeed; // How fast to interpolate (0-1, lower = smoother)
     const influenceFadeSpeed = 0.05; // How fast influence fades in/out
 
     const animate = (time: number) => {
       // Smoothly interpolate mouse influence
       if (targetMouseXRef.current !== null) {
-        // Mouse is in container - fade in influence and lerp position
+        // Mouse is in container - fade in influence and lerp positions
         mouseInfluenceRef.current += (1 - mouseInfluenceRef.current) * influenceFadeSpeed;
         smoothMouseXRef.current += (targetMouseXRef.current - smoothMouseXRef.current) * lerpSpeed;
+        
+        
+        // Map mouse position to gradient range using props
+        const rangeWidth = dimensions.width * (gradientRangeEnd - gradientRangeStart);
+        const startOffset = dimensions.width * gradientRangeStart;
+        const gradientTargetX = (targetMouseXRef.current / dimensions.width) * rangeWidth + startOffset;
+        
+        smoothGradientXRef.current += (gradientTargetX - smoothGradientXRef.current) * gradientLerpSpeed;
       } else {
         // Mouse left container - fade out influence
         mouseInfluenceRef.current += (0 - mouseInfluenceRef.current) * influenceFadeSpeed;
+        // Even when mouse leaves, we can let the gradient drift towards center (optional, but keeps it safe)
+        // Even when mouse leaves, we can let the gradient drift towards center of the range (optional)
+        const rangeCenter = dimensions.width * (gradientRangeStart + (gradientRangeEnd - gradientRangeStart) / 2);
+        const centerTarget = rangeCenter;
+        smoothGradientXRef.current += (centerTarget - smoothGradientXRef.current) * gradientLerpSpeed;
       }
 
       if (pathRef.current && dimensions.width > 0) {
         const path = generateWavePath(time, dimensions.width, dimensions.height);
         pathRef.current.setAttribute("d", path);
+      }
+
+      // Update gradient position
+      if (gradientRef.current) {
+        gradientRef.current.style.background = `radial-gradient(circle at ${smoothGradientXRef.current}px 100%, rgb(var(--bg-vfx1)), rgb(var(--bg-vfx2)))`;
       }
       animationRef.current = requestAnimationFrame(animate);
     };
@@ -155,6 +187,15 @@ export const WaveBackground: React.FC<WaveBackgroundProps> = ({
     updateDimensions();
     window.addEventListener("resize", updateDimensions);
 
+    // Initialize smoothed positions to center so gradient doesn't start at 0
+    if (containerRef.current) {
+        const center = containerRef.current.offsetWidth / 2;
+        smoothMouseXRef.current = center;
+        // Start gradient at the start of its range (or center of range)
+        const rangeCenter = containerRef.current.offsetWidth * (gradientRangeStart + (gradientRangeEnd - gradientRangeStart) / 2);
+        smoothGradientXRef.current = rangeCenter;
+    }
+
     return () => {
       window.removeEventListener("resize", updateDimensions);
     };
@@ -179,10 +220,12 @@ export const WaveBackground: React.FC<WaveBackgroundProps> = ({
       >
         {/* Gradient background layer */}
         <div
+          ref={gradientRef}
           className="absolute inset-0"
           style={{
             opacity: 0.2,
-            background: "linear-gradient(to top left, rgb(var(--bg-vfx1)), rgb(var(--bg-vfx2)))",
+            // Initial gradient before animation starts
+            background: "radial-gradient(circle at 50% 100%, rgb(var(--bg-vfx1)), rgb(var(--bg-vfx2)))",
           }}
         />
 
@@ -190,7 +233,7 @@ export const WaveBackground: React.FC<WaveBackgroundProps> = ({
         <div
           className="absolute inset-0"
           style={{
-            opacity: 0.08,
+            opacity: 0.03,
             backgroundImage: 'url("./static-background-texture.jpg")',
             backgroundRepeat: "repeat",
             backgroundPosition: "center",

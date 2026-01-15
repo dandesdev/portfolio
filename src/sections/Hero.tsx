@@ -3,6 +3,7 @@ import { SocialMediaNav } from "../components/SocialMediaNav";
 import cn from "../utils/cn";
 import { useUserPreferences } from "../context/useUserPreferences";
 import { ContactButton } from "../components/ContactButton";
+import { WaveBackground } from "../components/WaveBackground";
 
 type HeroContent = {
   title: string;
@@ -108,7 +109,7 @@ export const Hero: React.FC<HeroProps> = ({ className }) => {
           </div>
         </div>
       </>
-      <div className="background-vfx"></div>
+      <WaveBackground />
     </section>
   );
 };

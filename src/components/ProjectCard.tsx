@@ -13,7 +13,6 @@ export const ProjectCard: React.FC<{
 
   return (
     <div
-      key={p.title}
       className="rounded-lg w-full border border-neutral/30 bg-background/40 
                  shadow-md p-6 flex flex-col sm:flex-row justify-between 
                  transition-transform duration-300 hover:scale-[1.02] gap-6"
@@ -55,6 +54,7 @@ export const ProjectCard: React.FC<{
             <img
               src={thumbSrc}
               alt={`${p.title} thumbnail`}
+              loading="lazy"
               className="w-full h-full object-cover rounded-md shadow hover:opacity-90 transition-opacity"
             />
           </a>
@@ -62,6 +62,7 @@ export const ProjectCard: React.FC<{
           <img
             src={thumbSrc}
             alt={`${p.title} thumbnail`}
+            loading="lazy"
             className="w-full h-full object-cover rounded-md shadow"
           />
         )}

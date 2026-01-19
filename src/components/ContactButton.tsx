@@ -70,10 +70,13 @@ export const ContactButton: React.FC<{
               {buttonText[lang][0]}
             </span>
             <span
-              className={`absolute inset-2 transition-transform duration-200 ${
+              className={`absolute inset-2 flex items-center gap-1 transition-transform duration-200 ${
                 copied ? "translate-y-0" : "translate-y-[150%]"
               }`}
             >
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+              </svg>
               {buttonText[lang][1]}
             </span>
           </div>

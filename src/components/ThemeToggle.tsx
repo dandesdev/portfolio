@@ -1,17 +1,19 @@
 import { useUserPreferences } from "../context/useUserPreferences";
 
 export const ThemeToggle = () => {
-  const { theme, setTheme } = useUserPreferences();
+  const { theme, setTheme, lang } = useUserPreferences();
 
   const toggleTheme = () => {
     setTheme(theme === "dark" ? "light" : "dark");
   };
 
+  const label = lang === "br" ? "Alternar tema" : "Toggle theme";
+
   return (
     <button
       id="theme-toggle"
-      aria-label="Toggle theme"
-      title="Toggle theme"
+      aria-label={label}
+      title={label}
       onClick={toggleTheme}
       className="relative
                  bg-transparent

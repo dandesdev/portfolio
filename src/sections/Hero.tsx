@@ -52,8 +52,7 @@ export const Hero: React.FC<HeroProps> = ({ className }) => {
 
   return (
     <section className={cn("h-[90dvh]", className)}>
-      <>
-        <div className="absolute my-auto p-2 inset-0 sm:inset-[10%] mx-auto flex flex-col items-center max-w-[600px] justify-center h-fit max-h-screen z-10 overflow-show gap-4">
+      <div className="absolute my-auto p-2 inset-0 sm:inset-[10%] mx-auto flex flex-col items-center max-w-[600px] justify-center h-fit max-h-screen z-10 overflow-show gap-4">
           <div className="flex flex-col px-8 sm:px-0 sm:self-center select-none text-text font-fira">
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
               <div className="flex flex-col">
@@ -91,8 +90,10 @@ export const Hero: React.FC<HeroProps> = ({ className }) => {
               <span className="pl-1">{currentContent.btnProjects}</span>
             </button>
             <a 
-              href={`https://dandesdev.github.io/journal/${lang}`} target="blank"
-              className="flex h-fit flex-nowrap px-5 py-2 rounded-sm font-fira font-bold text-lg  
+              href={`https://dandesdev.github.io/journal/${lang}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex h-fit flex-nowrap items-center gap-1 px-5 py-2 rounded-sm font-fira font-bold text-lg  
              text-primary hover:text-background 
              hover:bg-primary bg-transparent 
              outline-dashed outline-2 hover:outline-transparent outline-primary 
@@ -100,14 +101,14 @@ export const Hero: React.FC<HeroProps> = ({ className }) => {
              focus:outline-offset-2 focus:outline focus:outline-text 
              outline-offset-[-2px] opacity-100 hover:opacity-100
              transition-all duration-300 ease-in-out"
-              aria-label={currentContent.btnBlog}
+              aria-label={`${currentContent.btnBlog} (opens in new tab)`}
             >
                 {currentContent.btnBlog}
+                <span className="text-sm" aria-hidden="true">↗</span>
             </a>
             <ContactButton lang={lang} />
           </div>
         </div>
-      </>
       <WaveBackground />
     </section>
   );

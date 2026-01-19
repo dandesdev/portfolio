@@ -129,14 +129,24 @@ export const WaveBackground: React.FC<WaveBackgroundProps> = ({
   useEffect(() => {
     const lerpSpeed = mouseLerpSpeed; // How fast to interpolate (0-1, lower = smoother)
     const influenceFadeSpeed = 0.05; // How fast influence fades in/out
+    let isVisible = !document.hidden;
+
+    const handleVisibilityChange = () => {
+      isVisible = !document.hidden;
+      if (isVisible) {
+        animationRef.current = requestAnimationFrame(animate);
+      }
+    };
 
     const animate = (time: number) => {
+      // Don't animate if tab is not visible
+      if (!isVisible) return;
+
       // Smoothly interpolate mouse influence
       if (targetMouseXRef.current !== null) {
         // Mouse is in container - fade in influence and lerp positions
         mouseInfluenceRef.current += (1 - mouseInfluenceRef.current) * influenceFadeSpeed;
         smoothMouseXRef.current += (targetMouseXRef.current - smoothMouseXRef.current) * lerpSpeed;
-        
         
         // Map mouse position to gradient range using props
         const rangeWidth = dimensions.width * (gradientRangeEnd - gradientRangeStart);
@@ -165,12 +175,14 @@ export const WaveBackground: React.FC<WaveBackgroundProps> = ({
       animationRef.current = requestAnimationFrame(animate);
     };
 
+    document.addEventListener("visibilitychange", handleVisibilityChange);
     animationRef.current = requestAnimationFrame(animate);
 
     return () => {
+      document.removeEventListener("visibilitychange", handleVisibilityChange);
       cancelAnimationFrame(animationRef.current);
     };
-  }, [dimensions, generateWavePath]);
+  }, [dimensions, generateWavePath, mouseLerpSpeed, gradientLerpSpeed, gradientRangeStart, gradientRangeEnd]);
 
   // Handle resize
   useEffect(() => {
@@ -198,7 +210,7 @@ export const WaveBackground: React.FC<WaveBackgroundProps> = ({
     return () => {
       window.removeEventListener("resize", updateDimensions);
     };
-  }, []);
+  }, [gradientRangeStart, gradientRangeEnd]);
 
   // Add mouse listener at window level for reliable capture
   useEffect(() => {

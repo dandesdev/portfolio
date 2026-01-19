@@ -148,7 +148,6 @@ export const WaveBackground: React.FC<WaveBackgroundProps> = ({
         // Mouse left container - fade out influence
         mouseInfluenceRef.current += (0 - mouseInfluenceRef.current) * influenceFadeSpeed;
         // Even when mouse leaves, we can let the gradient drift towards center (optional, but keeps it safe)
-        // Even when mouse leaves, we can let the gradient drift towards center of the range (optional)
         const rangeCenter = dimensions.width * (gradientRangeStart + (gradientRangeEnd - gradientRangeStart) / 2);
         const centerTarget = rangeCenter;
         smoothGradientXRef.current += (centerTarget - smoothGradientXRef.current) * gradientLerpSpeed;

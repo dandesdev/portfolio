@@ -10,7 +10,7 @@ type ProjectProps = {
   className?: string;
 };
 
-type Project = {
+export type Project = {
   title: string;
   description: string;
   techs: string[];
@@ -28,7 +28,7 @@ export const Projects: React.FC<ProjectProps> = ({ className }) => {
     <section
       id="projects"
       className={cn(
-        "min-h-[100dvh] bg-backrgound flex flex-col justify-center place-items-center py-16 px-8 font-fira",
+        "min-h-[100dvh] bg-background flex flex-col justify-center place-items-center py-16 px-8 font-fira",
         className
       )}
     >

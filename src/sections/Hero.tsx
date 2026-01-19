@@ -90,7 +90,8 @@ export const Hero: React.FC<HeroProps> = ({ className }) => {
               </span>
               <span className="pl-1">{currentContent.btnProjects}</span>
             </button>
-            <button
+            <a 
+              href={`https://dandesdev.github.io/journal/${lang}`} target="blank"
               className="flex h-fit flex-nowrap px-5 py-2 rounded-sm font-fira font-bold text-lg  
              text-primary hover:text-background 
              hover:bg-primary bg-transparent 
@@ -101,10 +102,8 @@ export const Hero: React.FC<HeroProps> = ({ className }) => {
              transition-all duration-300 ease-in-out"
               aria-label={currentContent.btnBlog}
             >
-              <a href={`https://dandesdev.github.io/journal/${lang}`} target="blank">
                 {currentContent.btnBlog}
-              </a>
-            </button>
+            </a>
             <ContactButton lang={lang} />
           </div>
         </div>

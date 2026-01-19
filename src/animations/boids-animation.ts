@@ -275,6 +275,6 @@ export function initBoids(getScrollVelocity: () => number) {
     window.removeEventListener("mouseup", mouseUp);
     window.removeEventListener("touchmove", touchMove);
     window.removeEventListener("touchstart", touchStart);
-    window.removeEventListener("touchend", mouseUp);
+    window.removeEventListener("touchend", touchEnd);
   };
 }

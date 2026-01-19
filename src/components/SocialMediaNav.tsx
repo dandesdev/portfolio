@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { Tooltip } from "./Toottip";
+import { Tooltip } from "./Tooltip";
 
 export const SocialMediaNav: React.FC = () => {
   return (

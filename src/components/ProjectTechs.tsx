@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-import { Tooltip } from "./Toottip";
+import { Tooltip } from "./Tooltip";
 import { useUserPreferences } from "../context/useUserPreferences";
 import cn from "../utils/cn";
 

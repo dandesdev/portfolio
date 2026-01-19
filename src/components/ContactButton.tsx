@@ -17,7 +17,7 @@ export const ContactButton: React.FC<{
 }> = ({ lang, className, show }) => {
   const [copied, setCopied] = useState(false);
   const { prefersReducedMotion } = useUserPreferences();
-  const email = "danie.rangel.guedes@gmail.com";
+  const email = "daniel.rangel.guedes@gmail.com";
 
   const handleClick = () => {
     const isMobile = /Mobi|Android/i.test(navigator.userAgent);

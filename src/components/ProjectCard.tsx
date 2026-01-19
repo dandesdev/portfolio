@@ -1,12 +1,6 @@
 import type { Language } from "../context/useUserPreferences";
+import type { Project } from "../sections/Projects";
 import { ProjectTechs } from "./ProjectTechs";
-
-type Project = {
-  title: string;
-  description: string;
-  techs: string[];
-  links: Record<string, string>;
-};
 
 export const ProjectCard: React.FC<{
   p: Project;

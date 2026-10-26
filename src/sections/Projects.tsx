@@ -10,16 +10,22 @@ type ProjectProps = {
   className?: string;
 };
 
+export type ProjectKind = "tool" | "data" | "game" | "simulation";
+export type ProjectSize = "small" | "medium" | "large";
+
 export type Project = {
   title: string;
   description: string;
+  kind: ProjectKind;
+  size: ProjectSize;
+  wip?: boolean;
   techs: string[];
   links: Record<string, string>;
 };
 
 export const Projects: React.FC<ProjectProps> = ({ className }) => {
   const { lang } = useUserPreferences();
-  const projects: Project[] = lang === "en" ? projectsEn : projectsBr;
+  const projects = (lang === "en" ? projectsEn : projectsBr) as Project[];
   const titleRef = useRef<HTMLHeadingElement>(null);
 
   useScrollBlur(titleRef);

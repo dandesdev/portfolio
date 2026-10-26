@@ -1,5 +1,6 @@
 [
   {
+    "id": "onde-morar-em-sp",
     "title": "Onde Morar Em SP",
     "description": "Dá uma nota para cada quadra de São Paulo pelo trajeto até o destino, segurança, verde, comércio a pé e ruas calmas. O trajeto é calculado no navegador sobre ônibus da SPTrans, metrô e CPTM, e uma GitHub Action atualiza os dados toda semana.",
     "kind": "data",
@@ -11,6 +12,7 @@
     }
   },
   {
+    "id": "br-grama",
     "title": "br-grama",
     "description": "Um mapa interativo de como funciona o Estado brasileiro, com cerca de 9.000 entidades pesquisadas. Cada uma traz fonte, data e nível de confiança.",
     "kind": "data",
@@ -23,6 +25,7 @@
     }
   },
   {
+    "id": "melhor-para-ler",
     "title": "melhor para ler",
     "description": "Transforma PDFs de livros escaneados em PDFs que dá para ler no celular: endireita as páginas, separa páginas duplas, corta as margens e reorganiza colunas. Tudo roda no navegador.",
     "kind": "tool",
@@ -34,6 +37,7 @@
     }
   },
   {
+    "id": "geosimples",
     "title": "GeoSimples",
     "description": "Ferramenta para criação de imagens simples e padronizadas de figuras geométricas, voltada principalmente para criação de conteúdo educativo.",
     "kind": "tool",
@@ -45,6 +49,7 @@
     }
   },
   {
+    "id": "snake-game-3d",
     "title": "Jogo da Cobrinha 3D",
     "description": "Realmente em 3D, é um minigame retrô onde você pode mover a cobrinha nos três eixos do espaço. É mais difícil do que você imagina. E bastante customizável.",
     "kind": "game",
@@ -56,6 +61,7 @@
     }
   },
   {
+    "id": "ferias",
     "title": "Férias",
     "description": "Planejador de férias que conhece os feriados nacionais, estaduais e municipais. Dá para compartilhar o plano por link.",
     "kind": "tool",
@@ -67,6 +73,7 @@
     }
   },
   {
+    "id": "particles-random-physics",
     "title": "Partículas e Físicas Aleatórias",
     "description": "Um ambiente 3D, feito para ser usado de forma educativa, onde você pode interagir com um sistema de partículas que possuem comportamentos físicos aleatórios, além de rápidas descrições.",
     "kind": "simulation",

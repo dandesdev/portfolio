@@ -3,12 +3,19 @@ import type { Project } from "../sections/Projects";
 import { ProjectTags } from "./ProjectTags";
 import { ProjectTechs } from "./ProjectTechs";
 
+// Thumbnails are named after the project id. Importing them through Vite gives
+// each file a content hash, so a changed image never shows up stale from cache.
+const thumbs = import.meta.glob<string>("../assets/project-thumbs/*.png", {
+  eager: true,
+  query: "?url",
+  import: "default",
+});
+
 export const ProjectCard: React.FC<{
   p: Project;
   lang: Language;
-  index: number;
-}> = ({ p, lang, index }) => {
-  const thumbSrc = `${import.meta.env.BASE_URL}project-thumbs/${index + 1}.png`;
+}> = ({ p, lang }) => {
+  const thumbSrc = thumbs[`../assets/project-thumbs/${p.id}.png`];
 
   const thumbLink = p.links.page || p.links.github || null;
 

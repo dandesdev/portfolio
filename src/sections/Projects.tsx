@@ -14,6 +14,7 @@ export type ProjectKind = "tool" | "data" | "game" | "simulation";
 export type ProjectSize = "small" | "medium" | "large";
 
 export type Project = {
+  id: string;
   title: string;
   description: string;
   kind: ProjectKind;
@@ -47,7 +48,7 @@ export const Projects: React.FC<ProjectProps> = ({ className }) => {
         </h2>
 
         <div className="flex flex-col justify-center place-items-center gap-4">
-          {projects.map((p, index) => (<ProjectCard p={p} lang={lang} key={`project-card-${p.title}`} index={index}/>))}
+          {projects.map((p) => (<ProjectCard p={p} lang={lang} key={p.id} />))}
         </div>
       </div>
     </section>

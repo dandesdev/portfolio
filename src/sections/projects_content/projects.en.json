@@ -1,5 +1,6 @@
 [
   {
+    "id": "onde-morar-em-sp",
     "title": "Onde Morar Em SP",
     "description": "Scores every block of São Paulo for commute, safety, green cover, walkability and quiet streets. Commutes are routed in the browser over SPTrans buses, metro and CPTM trains, and a GitHub Action refreshes the data every week.",
     "kind": "data",
@@ -11,6 +12,7 @@
     }
   },
   {
+    "id": "br-grama",
     "title": "br-grama",
     "description": "An interactive map of how the Brazilian state works, with about 9,000 researched entities. Each one comes with its source, date and confidence level.",
     "kind": "data",
@@ -23,6 +25,7 @@
     }
   },
   {
+    "id": "melhor-para-ler",
     "title": "melhor para ler",
     "description": "Turns scanned book PDFs into PDFs you can read on a phone: it straightens pages, splits double pages, crops margins and reflows columns. Everything runs in the browser.",
     "kind": "tool",
@@ -34,6 +37,7 @@
     }
   },
   {
+    "id": "geosimples",
     "title": "GeoSimples",
     "description": "Tool designed for creation of simple and standardized images of geometric figures, mainly aimed at educative content creation.",
     "kind": "tool",
@@ -45,6 +49,7 @@
     }
   },
   {
+    "id": "snake-game-3d",
     "title": "Snake Game 3D",
     "description": "This is a retro Snake Game actually in 3D, meaning you can move in the three directions of space. It's harder than you think. And there are a lot of customizations.",
     "kind": "game",
@@ -56,6 +61,7 @@
     }
   },
   {
+    "id": "ferias",
     "title": "Férias",
     "description": "A vacation planner that knows Brazil's national, state and municipal holidays. Plans can be shared with a link.",
     "kind": "tool",
@@ -67,6 +73,7 @@
     }
   },
   {
+    "id": "particles-random-physics",
     "title": "Particles And Random Physics",
     "description": "Made as an education tool, this is a 3D environment, where you can interact with a particle system behaving in accordance with some random physics that comes with a short description.",
     "kind": "simulation",

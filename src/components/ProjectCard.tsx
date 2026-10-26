@@ -1,5 +1,6 @@
 import type { Language } from "../context/useUserPreferences";
 import type { Project } from "../sections/Projects";
+import { ProjectTags } from "./ProjectTags";
 import { ProjectTechs } from "./ProjectTechs";
 
 export const ProjectCard: React.FC<{
@@ -18,6 +19,7 @@ export const ProjectCard: React.FC<{
                  transition-transform duration-300 hover:scale-[1.02] gap-6"
     >
       <div className="flex-1">
+        <ProjectTags kind={p.kind} size={p.size} wip={p.wip} lang={lang} />
         <h3 className="text-xl font-semibold mb-2 text-text">{p.title}</h3>
         <p className="text-sm text-text/80 mb-4">{p.description}</p>
         <ProjectTechs techs={p.techs} />

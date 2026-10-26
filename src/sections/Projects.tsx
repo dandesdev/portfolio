@@ -11,14 +11,14 @@ type ProjectProps = {
 };
 
 export type ProjectKind = "tool" | "data" | "game" | "simulation";
-export type ProjectSize = "small" | "medium" | "large";
+export type ProjectArch = "client" | "data" | "fullstack";
 
 export type Project = {
   id: string;
   title: string;
   description: string;
   kind: ProjectKind;
-  size: ProjectSize;
+  arch: ProjectArch;
   wip?: boolean;
   techs: string[];
   links: Record<string, string>;

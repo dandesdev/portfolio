@@ -83,5 +83,14 @@
       "page": "https://particlesrandomphysics.vercel.app/",
       "github": "https://github.com/dandesdev/particlesrandomphysics"
     }
+  },
+  {
+    "id": "justaskforit",
+    "title": "justaskforit",
+    "description": "Um portfólio de brincadeira, sem páginas e sem menus. Você pede alguma coisa e o Gemini monta uma página na hora, usando só alguns arquivos markdown sobre mim. Cada vez sai uma página diferente, e nem sempre boa.",
+    "kind": "toy",
+    "arch": "fullstack",
+    "techs": ["Next", "React", "Typescript", "Tailwind", "Gemini"],
+    "links": {}
   }
 ]

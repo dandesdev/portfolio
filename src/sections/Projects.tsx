@@ -10,7 +10,7 @@ type ProjectProps = {
   className?: string;
 };
 
-export type ProjectKind = "tool" | "data" | "game" | "simulation";
+export type ProjectKind = "tool" | "data" | "game" | "simulation" | "toy";
 export type ProjectArch = "client" | "data" | "fullstack";
 
 export type Project = {

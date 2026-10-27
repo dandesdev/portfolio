@@ -7,6 +7,7 @@ const kindLabels: Record<ProjectKind, Record<Language, string>> = {
   data: { en: "data", br: "dados" },
   game: { en: "game", br: "jogo" },
   simulation: { en: "simulation", br: "simulação" },
+  toy: { en: "toy", br: "brinquedo" },
 };
 
 const archLabels: Record<ProjectArch, Record<Language, string>> = {

@@ -92,6 +92,7 @@
     "arch": "fullstack",
     "techs": ["Next", "React", "Typescript", "Tailwind", "Gemini"],
     "links": {
+      "page": "https://justaskforit.vercel.app/",
       "github": "https://github.com/dandesdev/justaskforit"
     }
   }

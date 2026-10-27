@@ -91,6 +91,8 @@
     "kind": "toy",
     "arch": "fullstack",
     "techs": ["Next", "React", "Typescript", "Tailwind", "Gemini"],
-    "links": {}
+    "links": {
+      "github": "https://github.com/dandesdev/justaskforit"
+    }
   }
 ]

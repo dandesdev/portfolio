@@ -42,10 +42,10 @@
     "description": "Ferramenta para criação de imagens simples e padronizadas de figuras geométricas, voltada principalmente para criação de conteúdo educativo.",
     "kind": "tool",
     "arch": "client",
-    "techs": ["React", "Next", "Typescript", "Tailwind", "Zustand"],
+    "techs": ["React", "Vite", "Typescript", "Tailwind", "Zustand"],
     "links": {
       "page": "https://geosimples.vercel.app/",
-      "github": "https://github.com/dandesdev/tikzgenerator"
+      "github": "https://github.com/dandesdev/geosimples"
     }
   },
   {
